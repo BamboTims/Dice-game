@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#396afc), to(#2948ff));
+  background-image: linear-gradient(#396afc, #2948ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 80%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(200px);
+          backdrop-filter: blur(200px);
+  -webkit-filter: blur();
+          filter: blur();
+  -webkit-box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  padding: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
+
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #2948ff;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--active .name {
+  font-weight: 700;
+}
+
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: #396afc;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  -webkit-box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+
+.btn--roll {
+  top: 39.3rem;
+}
+
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  -webkit-transform: translate(-50%, 3px);
+          transform: translate(-50%, 3px);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 10rem;
+  -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.player--winner {
+  background-color: #465c69;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #f7f7f7;
+}
+
+.player--winner .score {
+  color: #f9a620;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 37.5%;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+  .player {
+    height: 50%;
+    width: 100%;
+    gap: 1rem;
+  }
+  .btn--new {
+    top: 2rem;
+  }
+  .btn--roll,
+  .btn--hold {
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .btn--roll {
+    left: 20%;
+  }
+  .btn--hold {
+    width: 15rem;
+    left: 80%;
+  }
+  .dice {
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
